@@ -1,0 +1,12 @@
+{
+  "name": "ilk-node-uygulamasi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "npx jest"
+  },
+  "author": "",
+  "license": "ISC"
+}

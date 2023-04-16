@@ -1,0 +1,10 @@
+{
+    "adi": "Osman",
+    "yas": 32,
+    "mezunMu": false,
+    "aldigiDersler": ["js", "node"],
+    "adres": {
+        "sehir": "istanbul",
+        "ilce": "kadiköy"
+    }
+}
