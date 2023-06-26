@@ -11,7 +11,7 @@ var corsOptions = {
   optionsSuccessStatus: 200,
 };
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 4000;
 
 const app = express();
 
@@ -20,7 +20,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors(corsOptions));
 
 // db Config Section
-const db = process.env.MongoURI;
+const db = process.env.MongoURI || "mongodb://localhost:27017/course_db";
+
+console.log(db);
 mongoose
   .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(console.log("Db connected"))

@@ -31,12 +31,16 @@ const login = async (req, res) => {
     surname: data.surname,
   };
 
-  const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN);
+  const accessToken = jwt.sign(
+    user,
+    process.env.ACCESS_TOKEN || "cok_gizli_sifre_1234"
+  );
 
   res.status(200).json({ ...user, token: accessToken });
 };
 
 const find = async (req, res) => {
+  console.log("here");
   const id = req.params.id;
   try {
     const data = await Users.findOne({ _id: id }).exec();

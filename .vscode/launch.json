@@ -11,7 +11,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}/2023-05-07_21/src/app.js"
+            "program": "${workspaceFolder}/2023-05-07-21/src/app.js"
         }
     ]
 }
