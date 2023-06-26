@@ -81,6 +81,19 @@ const remove = async (req, res) => {
   }
 };
 
+const checkUserByToken = async (req, res) => {
+  const headerAuth = req.headers["authorization"];
+  if (!headerAuth) {
+    return res.status(403).json({ message: "No token data." });
+  }
+
+  const token = headerAuth.split(" ")[1];
+
+  const user = jwt.decode(token);
+
+  res.json({ ...user, token });
+};
+
 module.exports = {
   register,
   login,
@@ -88,4 +101,5 @@ module.exports = {
   findAll,
   update,
   remove,
+  checkUserByToken,
 };

@@ -7,6 +7,7 @@ const {
   findAll,
   update,
   remove,
+  checkUserByToken,
 } = require("../services/usersService.js");
 const auth = require("../middlewares/auth.js");
 const logger = require("../middlewares/logger.js");
@@ -17,6 +18,7 @@ router.get("/:id", find);
 router.get("/", auth, logger, logger, logger, findAll); // secure
 router.patch("/", update);
 router.delete("/:id", auth, remove); // secure
+router.get("/check/me", checkUserByToken);
 
 // rest API
 /**
